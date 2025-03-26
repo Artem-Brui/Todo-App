@@ -48,7 +48,6 @@ const Header: React.FC = () => {
 
   return (
     <header className="todoapp__header" role="banner">
-      {/* this button should have `active` class only if all todos are completed */}
       {Boolean(todos.length) && (
         <button
           type="button"
@@ -63,7 +62,6 @@ const Header: React.FC = () => {
         />
       )}
 
-      {/* Add a todo on form submit */}
       <form onSubmit={handleFormSubmit} role="search">
         <input
           data-cy="NewTodoField"

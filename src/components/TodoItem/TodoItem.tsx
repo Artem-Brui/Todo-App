@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+
 import classNames from 'classnames';
 import React, { useCallback, useState } from 'react';
 import { Todo } from '../../types/globalTypes';
@@ -45,14 +45,6 @@ const TodoItem: React.FC<Props> = ({ todo }) => {
       </label>
 
       {todoTitleComponent}
-
-      {/* <div
-        data-cy="TodoLoader"
-        className={classNames('modal overlay', { 'is-active': isLoading })}
-      >
-        <div className="modal-background has-background-white-ter" />
-        <div className="loader" />
-      </div> */}
     </div>
   );
 };

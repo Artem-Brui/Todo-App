@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/indent */
+
 import { FilterType, Todo } from '../types/globalTypes';
 
 export type GlobalState = {

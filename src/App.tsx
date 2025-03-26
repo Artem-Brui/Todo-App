@@ -5,8 +5,6 @@ import TodoList from "./components/TodoList";
 import Title from "./components/Title";
 import ErrorBoundary from "./components/ErrorBoundary";
 
-// localStorage.clear()
-
 export const App: React.FC = () => {
   return (
     <div className="todoapp" role="application">

@@ -24,7 +24,6 @@ const Footer: React.FC = () => {
         {`${activeTodosAmount} items left`}
       </span>
 
-      {/* Active link should have the 'selected' class */}
       <nav className="filter" data-cy="Filter">
         {filterTypes.map(filter => {
           const link = filter === 'All' ? '' : filter.toLowerCase();
@@ -47,8 +46,6 @@ const Footer: React.FC = () => {
           );
         })}
       </nav>
-
-      {/* this button should be disabled if there are no completed todos */}
 
       <button
         type="button"
