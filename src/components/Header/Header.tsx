@@ -1,25 +1,25 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useDispatch, useGlobalState } from '../../Context/CustomHooks';
-import { Todo } from '../../types/globalTypes';
-import classNames from 'classnames';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useDispatch, useGlobalState } from "../../Context/CustomHooks";
+import { Todo } from "../../types/globalTypes";
+import classNames from "classnames";
 
 const Header: React.FC = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const dispatch = useDispatch();
   const { todos } = useGlobalState();
   const mainInputElement = useRef(null);
-  const isAllCompleted = todos.every(todo => todo.completed);
+  const isAllCompleted = todos.every((todo) => todo.completed);
 
   useEffect(() => {
     dispatch({
-      type: 'addMainInputElement',
+      type: "addMainInputElement",
       payload: mainInputElement.current,
     });
   }, [dispatch]);
 
   const handleFormSubmit: React.FormEventHandler<HTMLFormElement> = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
 
       if (inputValue.trim().length) {
@@ -29,40 +29,42 @@ const Header: React.FC = () => {
           completed: false,
         };
 
-        dispatch({ type: 'todoAdd', payload: newTodo });
-        setInputValue('');
+        dispatch({ type: "todoAdd", payload: newTodo });
+        setInputValue("");
       } else {
-        setInputValue('');
+        setInputValue("");
       }
     },
-    [inputValue, dispatch],
+    [inputValue, dispatch]
   );
 
   const handleToggleAllClick = useCallback(() => {
     if (isAllCompleted) {
-      dispatch({ type: 'todosActiveAll' });
+      dispatch({ type: "todosActiveAll" });
     } else {
-      dispatch({ type: 'todosCompleteAll' });
+      dispatch({ type: "todosCompleteAll" });
     }
   }, [isAllCompleted, dispatch]);
 
   return (
-    <header className="todoapp__header">
+    <header className="todoapp__header" role="banner">
       {/* this button should have `active` class only if all todos are completed */}
       {Boolean(todos.length) && (
         <button
           type="button"
-          className={classNames('todoapp__toggle-all', {
+          className={classNames("todoapp__toggle-all", {
             active: isAllCompleted,
           })}
           data-cy="ToggleAllButton"
-          // disabled={!isAllCompleted}
+          aria-label={
+            isAllCompleted ? "Mark all as active" : "Mark all as completed"
+          }
           onClick={handleToggleAllClick}
         />
       )}
 
       {/* Add a todo on form submit */}
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleFormSubmit} role="search">
         <input
           data-cy="NewTodoField"
           type="text"
@@ -70,11 +72,12 @@ const Header: React.FC = () => {
           className="todoapp__new-todo"
           placeholder="What needs to be done?"
           value={inputValue}
-          onChange={e => setInputValue(e.target.value)}
+          onChange={(e) => setInputValue(e.target.value)}
+          aria-label="New todo input"
         />
       </form>
     </header>
   );
 };
 
-export default Header;
+export default React.memo(Header);
