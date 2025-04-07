@@ -37,52 +37,6 @@ A modern, responsive Todo application built with React and TypeScript, featuring
   - Font Awesome icons integration
   - Accessibility-first approach with ARIA labels
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/czcoding/Todo-App.git
-cd Todo-App
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:5173`
-
-### Building for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-### Deployment
-
-The application is deployed to GitHub Pages. To deploy manually:
-
-```bash
-npm run deploy
-```
-
 ## 🛠️ Tech Stack
 
 - React 19
@@ -134,3 +88,50 @@ src/
 ## 🎯 Live Demo
 
 Check out the live version at: [https://Artem-Brui.github.io/Todo-App/](https://Artem-Brui.github.io/Todo-App/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/czcoding/Todo-App.git
+cd Todo-App
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+### Deployment
+
+The application is deployed to GitHub Pages. To deploy manually:
+
+```bash
+npm run deploy
+```
+
