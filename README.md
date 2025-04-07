@@ -87,7 +87,8 @@ npm run deploy
 
 - React 19
 - TypeScript
-- Vite
+- Locale Storage
+- Context API
 - SASS
 - Bulma CSS
 - Font Awesome
