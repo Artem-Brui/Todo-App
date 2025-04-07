@@ -87,7 +87,7 @@ npm run deploy
 
 - React 19
 - TypeScript
-- Locale Storage
+- Local Storage
 - Context API
 - SASS
 - Bulma CSS
